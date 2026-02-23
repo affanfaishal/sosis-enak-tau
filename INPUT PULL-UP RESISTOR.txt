@@ -1,0 +1,20 @@
+INPUT PULL-UP RESISTOR
+
+jika tidak menggunakan pull-up resistor pin tersebut akan mengalami gangguan sinyal dari luar atau bisa dibilang input pin mengalami floating state (biasa dianggap sebagai sinyal bingung, karena berubah-ubah dari HIGH ke LOw secara acak)
+
+Tujuannya adalah untuk memastikan bahwa pin tersebut selalu berada pada kondisi logika tinggi (HIGH) atau logika rendah (LOW) ketika tidak ada sinyal eksternal yang menghubungkannya. Jadi, ini berfungsi sebagai penjaga agar input tidak bingung saat tidak ada perintah yang masuk
+
+
+
+Arduino punya INPUT PULL-UP RESISTOR bawaan, bisa dimasukkan dengan kode berikut:
+void setup() {
+  pinMode(2, INPUT_PULLUP); // aktifkan internal pull-up resistor
+}
+
+void loop() {
+  if (digitalRead(2) == LOW) {
+    // Tombol ditekan
+  } else {
+    // Tombol tidak ditekan
+  }
+}
